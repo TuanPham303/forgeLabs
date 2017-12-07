@@ -1,0 +1,40 @@
+.icon {
+  font-family:'FontAwesome';
+  margin:1.rem;
+  font-size:3.2em;
+  color: rgb(169,169,169);
+  -webkit-font-smoothing: antialiased;
+}
+.light {
+    -webkit-text-stroke: 7px #e5e5e5;
+}
+
+.nav-form > button {
+  border-radius: 0;
+  border-top: 2px solid black;
+}
+
+.nav-form > button.s-active, 
+.nav-form > button.visited {
+    opacity: 1;
+}
+
+.controller{
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.controller > span {
+  position: absolute;
+  right: 60px;
+  top: 15px;
+  font-size: 1.5rem;
+}
+
+
+
+
+
+
+

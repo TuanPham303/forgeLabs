@@ -1,0 +1,212 @@
+/* FORM TECHNOLOGIES */
+input.input-tab.input-onclick:focus {
+  outline: none;
+}
+.selected-technology-title {
+  display: flex;
+}
+
+.selected-technology {
+  color: #f82800 !important;
+  font-weight: bold;
+}
+
+.input-name {
+  margin-top: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.input-name > button {
+  background: transparent;
+  border: none;
+  font-size: 1.4em;
+  color: #ff2802;
+}
+
+.fa-question-circle {
+  color: #f82800;
+}
+
+/* FORM MATERIALS */
+
+/* FORM MATERIALS ABOUT */
+#about-overlay {
+  /* transition: opacity 5s linear; */
+  align-items: center;
+  background-color: #f82800;
+  bottom: 0;
+  display: none;
+  justify-content: center;
+  left: 0;
+  /* opacity: 0.95; */
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 2;
+}
+
+#about-container {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 2em;
+}
+
+.about-img {
+  margin-right: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+}
+
+.about-img > img {
+  height: 100%;
+  max-width: none;
+}
+
+.about-x {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#about-container > p {
+  color: white;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+.about-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.about-item > img {
+  height: 200px;
+  padding-left: 2em;
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-text > p {
+  color: white !important;
+  font-size: 1.4em;
+}
+
+.about-text > p:first-of-type {
+  font-size: 3em !important;  
+}
+
+.table {
+  margin-top: 2em;
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 80vw;
+
+}
+
+.table-titles > p {
+  font-weight: bold;
+  color: white !important;  
+}
+
+.table-row1 > p, .table-row2 > p{
+  color: white !important;  
+}
+
+.seven-col {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-column-gap: 10px;
+}
+
+.eight-col {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-column-gap: 10px;
+}
+
+.about-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 2em;
+}
+
+.about-footer > a {
+  color: white;
+  font-weight: bold;
+  border-bottom: 1px dashed white;
+  height: 1.8em;
+}
+
+.about-footer > a:hover, .about-select-btn:hover {
+  color: #ffffffba;
+}
+
+.about-select-btn {
+  border: 1px solid white;
+  background: transparent;
+  border-radius: initial;
+  color: white;
+  font-family:  "franklin-gothic-urw";
+  font-size: 1.3em;
+  font-weight: bold;
+  height: 3em;
+  letter-spacing: 1px;
+  width: 15em;
+}
+
+/* X Button */
+.x {
+  background: transparent;
+  border: none;
+  width: 32px;
+  height: 32px;
+  /* cursor: pointer; */
+}
+
+.x:before {
+  content: "";
+  position: absolute;
+  display: flex;
+  margin: auto;
+  width: 32px;
+  border-top: 2px solid #f82800;
+  transform: rotate(-45deg);
+  transform-origin: center;
+}
+.x:after {
+  content: "";
+  position: absolute;
+  display: flex;
+  margin: auto;
+  width: 32px;
+  border-top: 2px solid #f82800;
+  transform: rotate(45deg);
+  transform-origin: center;  
+}
+
+.x-white:before, .x-white:after {
+  border-top: 2px solid white;  
+}
+
+.x-wrap {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8em;
+}
+
+
+.input-container {
+  height: 136px;
+  overflow: hidden;
+}
+
+.input-container > .input-onclick {
+  object-fit: cover;
+  width: 100%;
+}
