@@ -403,8 +403,14 @@ function FormController() {
         }
 
         const description = document.querySelector('input[name="stl_description_' + this.curTabIndex + '"]');
-        const date = document.querySelector('input[name="stl_date_' + this.curTabIndex + '"]');
+        const quantity = document.querySelector('input[name="stl_quantity_' + this.curTabIndex + '"]');
 
+		if (description) {
+            document.getElementById('project-input').value = description.value;
+		}
+		if (quantity) {
+            document.getElementById('quantity-input').value = quantity.value;
+        }
         this.createFakeTitle()
     }
 
@@ -430,7 +436,7 @@ function FormController() {
     }
 
     this.create_tab = (function (event) {
-
+		
         var files = null;
         if (event) {
             files = event.srcElement.files;
@@ -450,8 +456,8 @@ function FormController() {
 
 
     this.create_tab_inputs = function (event) {
-        const newFormNode = document.querySelector('#quoter_hidden_form > .part').cloneNode(true);
 
+        const newFormNode = document.querySelector('#quoter_hidden_form > .part').cloneNode(true);
 
         for (var i = 0; i < newFormNode.children.length; i++) {
             const newName = newFormNode.children[i].name.slice(0, -1);
@@ -463,7 +469,13 @@ function FormController() {
             if (newFormNode.children[i].type === "file") {
                 newFormNode.children[i].addEventListener('change', this.create_tab);
                 newFormNode.children[i].value = null;
-            }
+			}  
+			if (newFormNode.children[i].type === "number") {
+                newFormNode.children[i].value = '';
+			}  
+			if (newFormNode.children[i].type === "text") {
+                newFormNode.children[i].value = '';
+            }   
         }
         document.getElementById('quoter_hidden_form').appendChild(newFormNode);
 
@@ -476,7 +488,7 @@ function FormController() {
                 const newName = newOverviewTabNode.children[j].name.slice(0, -1);
                 newOverviewTabNode.children[j].name = newName + this.curTabIndex.toString();
             }
-            //the date and detail inputs are wraped in another div so have to go deeper in the DOM
+            //the quantity and detail inputs are wraped in another div so have to go deeper in the DOM
             if (newOverviewTabNode.children[j].classList.contains('overviewInputWrap')) {
                 for(let i = 0; i < newOverviewTabNode.children[j].children.length; i++){
                     if(newOverviewTabNode.children[j].children[i].classList.contains('output')){
