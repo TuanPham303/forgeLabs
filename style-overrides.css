@@ -285,7 +285,7 @@ button:focus {
 
 .button-arrow{
     border: 0px;
-    background-color: red;
+    background-color: #ff2802;
     height: 50px;
     width: 50px;
     padding: 0;
@@ -293,8 +293,8 @@ button:focus {
 }
 .button-arrow > .arrow-icon {
     color: #fff;
-    background-color: red;
-    -webkit-text-stroke: 7px red;
+    background-color: #ff2802;
+    -webkit-text-stroke: 7px #ff2802;
 }
 
 .button-form{
@@ -311,7 +311,7 @@ button:focus {
     padding-right: 45px;}
 
 .button-red{
-    background-color: red;
+    background-color: #ff2802;
     border: none;
     color: white;
     letter-spacing: 0px;

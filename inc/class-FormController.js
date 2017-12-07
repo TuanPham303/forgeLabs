@@ -27,6 +27,11 @@ function FormController() {
             if (jQuery('#text-link').val() !== '') {
                 this.unlocked = true;
                 jQuery('.controller span').css('display', 'none'); // Remove Upload Text
+                jQuery('.next').css('opacity', '1');
+                jQuery('.next').prop('disabled', false);
+            } else {
+                jQuery('.next').css('opacity', '0.5');
+                this.unlocked = false;
             }
         })
     }
@@ -95,10 +100,22 @@ function FormController() {
 
 
         // If anywhere clicked, check for current nav tab and render nav arrows and nav file
-        jQuery('#quoter_form').on('click', '#create_tab', function () {
-            console.log('new tab');
+        jQuery('#quoter_form').on('click', 'input[class="output"][type="number"]', '#create_tab', function () {
             renderNav(); 
-        });
+		});
+		jQuery('#quoter_form').on('click', '#create_tab', function () {
+            renderNav(); 
+		});
+		jQuery('#quoter_form').on('click', 'input[class="output"][type="text"]', function () {
+            renderNav(); 
+		});
+		jQuery('#quoter_form').on('click','.fakeTitle', function () {
+            renderNav(); 
+		});
+		jQuery('#quoter_form').on('click','.pencil-icon', function () {
+            renderNav(); 
+		});
+
 
         // Next Button
         jQuery('.next').on('click', function (e) {
@@ -147,7 +164,8 @@ function FormController() {
                         jQuery('.next').prop('disabled', true);
                         jQuery('.next').css('opacity', '0.5');
                     } else {
-                        jQuery('.next').prop('disabled', false);
+						jQuery('.next').prop('disabled', false);
+						jQuery('.next').css('opacity', '1');
                     }
                 }
             }
@@ -157,9 +175,10 @@ function FormController() {
                     if (jQuery('#quoter_hidden_form input[name="stl_material_' + i + '"]:checked').size() === 0) {
                         jQuery('.next').prop('disabled', true);
                         jQuery('.next').css('opacity', '0.5');
-                        // jQuery('#page-4-button').prop('disabled', true);
-                        // jQuery('#page-5-button').prop('disabled', true);
-                    }
+                    } else {
+						jQuery('.next').prop('disabled', false);
+						jQuery('.next').css('opacity', '1');
+					}
                 }
             }
 
@@ -168,16 +187,27 @@ function FormController() {
                     if (jQuery('#quoter_hidden_form input[name="stl_quantity_' + i + '"]').val() === '') {
                         jQuery('.next').prop('disabled', true);
                         jQuery('.next').css('opacity', '0.5');
-                    }
+                    } else {
+						jQuery('.next').prop('disabled', false);
+						jQuery('.next').css('opacity', '1');
+					}
                 }
             }
             
-            console.log('this is active tab', activeTabIndex);
             if (activeTabIndex === 1) {
                 jQuery('.next').css('opacity', '0.5');
+
+                // change arrow button color after uploading 
                 document.querySelector('input[name="stl_file_' + this.curTabIndex + '"]').addEventListener('change', function(){
                     jQuery('.next').css('opacity', '1');
                 });
+                
+                //check if there is uploaded item when on page 1 then change arrow button
+				if (document.querySelector('input[name="stl_file_' + this.curTabIndex + '"]').value || jQuery('#text-link').val() !== '') {
+					jQuery('.next').css('opacity', '1');
+					jQuery('.next').prop('disabled', false);
+                }
+                
                 jQuery('.prev').hide();
                 jQuery('.controller').css('justify-content', 'flex-end');
             } else {
@@ -296,7 +326,6 @@ function FormController() {
             jQuery('#text-link').val('');
             jQuery('#project-input').val('');
             jQuery('#quantity-input').val('');
-            // console.log(jQuery('#text-link').val());
             if (!controller.is_form_valid()) { return false; }
             controller.create_tab();
             jQuery('.upload').show();
@@ -401,9 +430,8 @@ function FormController() {
         } else {
             jQuery('.grid-materials > label').removeClass('s-active');
         }
-
-        const description = document.querySelector('input[name="stl_description_' + this.curTabIndex + '"]');
-        const quantity = document.querySelector('input[name="stl_quantity_' + this.curTabIndex + '"]');
+		const description = document.querySelector('input:not(.output)[name="stl_description_' + this.curTabIndex + '"]');
+        const quantity = document.querySelector('input:not(.output)[name="stl_quantity_' + this.curTabIndex + '"]');
 
 		if (description) {
             document.getElementById('project-input').value = description.value;
@@ -444,12 +472,10 @@ function FormController() {
             tab.initialize(files);
             this.set_tab_index_to(this.activeTabs.length - 1);
         } else {
-
             var tab = new Tab();
             this.activeTabs.push(tab);
             this.set_tab_index_to(this.activeTabs.length - 1);
             this.create_tab_inputs();
-
         }
 
     }).bind(this)
