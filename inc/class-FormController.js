@@ -424,7 +424,7 @@ function FormController() {
         }
 
         if (jQuery('#quoter_hidden_form input[name="stl_material_' + this.curTabIndex + '"]:checked').size() > 0) {
-            const grid_material_index = (jQuery('#quoter_hidden_form input[name="stl_material_' + this.curTabIndex + '"]:checked').index() - 14);
+            const grid_material_index = (jQuery('#quoter_hidden_form input[name="stl_material_' + this.curTabIndex + '"]:checked').index() - 25);
             jQuery('.grid-materials > label').removeClass('s-active');
             jQuery('.grid-materials > label').eq(grid_material_index).addClass('s-active');
         } else {
