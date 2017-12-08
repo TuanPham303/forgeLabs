@@ -232,8 +232,8 @@ function FormController() {
 
 
         jQuery('.nav-files').on('click', function (e) {
-            if (e.srcElement.tagName === "BUTTON") {
-                const index = Array.prototype.indexOf.call(e.currentTarget.children, e.srcElement);
+            if (e.target.tagName === "BUTTON") {
+                const index = Array.prototype.indexOf.call(e.currentTarget.children, e.target);
                 controller.set_tab_index_to(index);
             }
         });
@@ -261,7 +261,7 @@ function FormController() {
         const controller = this;
 
         document.getElementById('quoter_form').addEventListener('click', function (e) {
-            if (e.srcElement.classList.contains('input-onclick')) {
+            if (e.target.classList.contains('input-onclick')) {
                 //check if on page 5 then detect which tab is clicked to edit
                 let currentTab;
                 if (jQuery('#page-5-button').hasClass('s-active')) {
@@ -273,7 +273,7 @@ function FormController() {
                     controller.curTabIndex = currentTab.dataset.tabIndex;
                 }
 
-                const input = e.srcElement;
+                const input = e.target;
                 const inputTarget = document.querySelector('input[name="' + input.dataset.controls + controller.curTabIndex + '"][value="' + input.value + '"]');
                 inputTarget.checked = true;
 
@@ -298,9 +298,9 @@ function FormController() {
 
         document.getElementById('quoter_form').addEventListener('input', function (e) {
 
-            if (e.srcElement.classList.contains('input-oninput')) {
+            if (e.target.classList.contains('input-oninput')) {
 
-                const input = e.srcElement;
+                const input = e.target;
                 const inputTarget = document.querySelector('input:not(.output)[name="' + input.dataset.controls + controller.curTabIndex + '"]');
                 inputTarget.value = input.value;
 
@@ -308,9 +308,9 @@ function FormController() {
                 output.value = input.value;
                 
                 
-            } else if (e.srcElement.classList.contains('input-clientdata')) {
+            } else if (e.target.classList.contains('input-clientdata')) {
 
-                const input = e.srcElement;
+                const input = e.target;
                 const inputTarget = document.querySelector('input[name="' + input.dataset.controls + '"]');
                 inputTarget.value = input.value;
 
@@ -358,14 +358,14 @@ function FormController() {
                 const index = Array.prototype.indexOf.call(this.children, selectedTab);
                 // drop down the list if clicked the button with class 'output'
                 if (e.target.tagName === "BUTTON" && e.target.classList.contains('output')) {
-                    e.srcElement.classList.toggle('s-active');
+                    e.target.classList.toggle('s-active');
                 }
                 if (e.target.classList.contains('drop-down-icon')) {
-                    e.srcElement.parentElement.classList.toggle('s-active');
+                    e.target.parentElement.classList.toggle('s-active');
                 }
 
                 //remove all the s-active class is click the project due and about project area then come back to the according page to update info
-                if (e.srcElement.tagName === "INPUT" || e.target.classList.contains('pencil-icon')) {
+                if (e.target.tagName === "INPUT" || e.target.classList.contains('pencil-icon')) {
                     e.preventDefault();
                     controller.set_tab_index_to(index)
                     jQuery('.nav-form > button').removeClass('s-active');
@@ -467,7 +467,7 @@ function FormController() {
 		
         var files = null;
         if (event) {
-            files = event.srcElement.files;
+            files = event.target.files;
             var tab = this.activeTabs[this.curTabIndex];
             tab.initialize(files);
             this.set_tab_index_to(this.activeTabs.length - 1);
