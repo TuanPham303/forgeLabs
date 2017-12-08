@@ -120,3 +120,7 @@
 .go-back-to-website > a:hover {
   color: #fff;
 }
+
+.request-a-quote-link > a {
+  color: red;
+}
