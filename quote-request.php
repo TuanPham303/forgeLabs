@@ -218,14 +218,16 @@
 
             <div class="part">
                 <input type="file" id="stl_file_0" name="stl_file_0">
-                <input type="radio" name="stl_technology_0" value="polyjet_stereolithography"/>
+                <input type="radio" name="stl_technology_0" value="polyjet_matrix"/>
+                <input type="radio" name="stl_technology_0" value="stereolithography"/>
                 <input type="radio" name="stl_technology_0" value="fused_deposition_modeling"/>
-                <input type="radio" name="stl_technology_0" value="full_colour_printing"/>
                 <input type="radio" name="stl_technology_0" value="selective_laser_sintering"/>
+                <input type="radio" name="stl_technology_0" value="colour_jet_printing"/>
+                <input type="radio" name="stl_technology_0" value="metal_printing"/>
                 
                 <?php $material_values = array(
-                    'verowhite', 'veroclear', 'tangoblackagilus30', 'digitalabs', 'hightempurature(rgd525)', 'simulatedpolypropylene(rigur)', 'accura25', 
-                    'absasa', 'nylon-12', 'polycarbonate', 'ultem9085', 'visijet-pxl', 'duraformpa'
+                    'verowhite', 'veroclear', 'tangoblackagilus30', 'digitalabs', 'hightempurature(rgd525)', 'simulatedpolypropylene(rigur)', 'accuraxtremewhite(abs-like)', 'accura25(polypropylene-like)', 'accuraclearvue(transparent)', 
+                    'absasa', 'nylon-12', 'polycarbonate', 'ultem9085', 'pc-abs', 'nylon-12cf', 'pc-iso', 'ultem1010', 'duraformpa(nylon)', 'duraformgf(glassfillednylon)', 'visijet-pxl'
                 ); ?>
                 
                 <?php foreach($material_values as $value) : ?>
