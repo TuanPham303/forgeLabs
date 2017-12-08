@@ -11,3 +11,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: __x__
 
 */
+.request-a-quote-link a {
+  color: #ff2800 !important;
+}
