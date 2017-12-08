@@ -61,6 +61,6 @@
             <input class="input-clientdata client-name" data-controls="LNAME" placeholder="Last Name*" type="text">
         </div>
     </div>
-    <button class="button-default button-form" id="submit_form">Submit Form</button>
+    <button class="button-default button-form" id="submit_form">Submit Request</button>
 
 </section>

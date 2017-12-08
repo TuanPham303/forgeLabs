@@ -1,6 +1,6 @@
 <section id='page-1' class="s-active form-section">
-    <p>".STL" is the preferred format for working with rapid prototyping machines and 3D printers.</p>
-    <p>We accept .STL &amp; .ZIP Files. Other allowed file types include: SLDASM, SLDDRW, SLDPRT, STP, STEP, IGES, X_T, PDF, DWG, ASM, OBJ, WRL, RAR, JPEG &amp; PNG</p>
+    <p>"STEP and STL" are the preferred format for working with rapid prototyping machines and 3D printers.</p>
+    <p>Other allowed file types include: SLDASM, SLDDRW, SLDPRT, STP, STEP, IGES, X_T, PDF, DWG, ASM, OBJ, WRL, ZIP, RAR, PDF, JPEG &amp; PNG</p>
     <div class="form_drop_zone" id="drop_zone">
         <div class='file-uploaded'>File Uploaded</div>
         <div class="upload">Drop files here, or</div>
