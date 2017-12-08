@@ -1,5 +1,5 @@
 const materialsData = {
-  'PolyJet & Stereolithography': {
+  'Polyjet Matrix': {
     'VeroWhite': {
       'row1': ['ASTM D 638', 'ASTM D 638', 'ASTM D 638', 'ASTM D 790', 'ASTM D 790', 'ASTM D 256', 'Shore D', 'ASTM D 648'],
       'row2': ['50-65', '2000-3000', '10-25', '75-110', '2200-3200', '20-30', '83-86', '45-50'],
@@ -32,7 +32,7 @@ const materialsData = {
       'row1': ['ASTM D 638', 'ASTM D 638', 'ASTM D 638', 'ASTM D 790', 'ASTM D 790', 'ASTM D 256', 'Shore D', 'ASTM D 648'],
       'row2': ['70-80', '3200-3500', '10-15', '110-130', '3100-3500', '14-16', '87-88', '63-80'],
       'type': 'Special Application Material',
-      'description': 'PolyJet High Temperature Material provides both heat resistance, exceptional dimensional stability and a beautiful surface finish. The material can withstand up 80°C  to simulate the thermal performance of engineering plastics. This material is ideal for testing applications such as hot-air flow or hot-water flow in pipes and faucets.',
+      'description': 'Polyjet High Temperature Material provides both heat resistance, exceptional dimensional stability and a beautiful surface finish. The material can withstand up 80°C  to simulate the thermal performance of engineering plastics. This material is ideal for testing applications such as hot-air flow or hot-water flow in pipes and faucets.',
       'datasheet': 'http://usglobalimages.stratasys.com/Main/Files/Material_Spec_Sheets/MSS_PJ_PJMaterialsDataSheet.pdf?v=635785205440671440'
     },
     'Simulated Polypropylene (Rigur)': {
@@ -42,8 +42,14 @@ const materialsData = {
       'description': 'Simulated Polypropylene material provides both durability along with a beautiful surface finish. Ideal for quickly creating prototypes for snap-fit components, living hinges and other high fatigue and demanding applications.',
       'datasheet': 'http://usglobalimages.stratasys.com/Main/Files/Material_Spec_Sheets/MSS_PJ_PJMaterialsDataSheet.pdf?v=635785205440671440'
     },
-    'Accura 25': {
+  },
+  'Stereolithography': {
+    'Accura Xtreme White (ABS-like)': {
+    },
+    'Accura 25 (Polypropylene-like)': {
       'description': 'Investment casting, fit validation and concept models. The lowest cost option for high detail resin based prints'
+    },
+    'Accura ClearVue (Transparent)': {
     }
   },
   'Fused Deposition Modeling': {
@@ -72,20 +78,48 @@ const materialsData = {
       'type': 'Special Application Material',
       'description': 'ULTEM 9085 is an FDM thermoplastic ideal for aerospace, automotive and military applications because of its FST rating, high strength-to-weight ratio and existing certifications. It empowers design and manufacturing engineers to 3D print advanced functional prototypes and production parts. – See more at: http://www.stratasys.com/materials/fdm/ultem-9085#sthash.ufHy9elu.dpuf',
       'datasheet': 'http://usglobalimages.stratasys.com/Main/Files/Material_Spec_Sheets/MSS_FDM_ULTEM9085.pdf'
+    },
+    'PC-ABS': {
+
+    },
+    'Nylon-12CF': {
+
+    },
+    'PC-ISO': {
+
+    },
+    'ULTEM 1010': {
+
+    },
+  },
+  'Selective Laser Sintering': {
+    'Duraform PA (Nylon)': {
+      'type': 'Special Application Material',
+      'description': 'Durable nylon material with excellent surface resolution and feature detail. Easily machinable and paintable to create demonstration parts.',
+      'datasheet': 'http://www.3dsystems.com/sites/www.3dsystems.com/files/DS_DuraForm_PA_US.pdf'
+    },
+    'Duraform GF (Glass Filled Nylon)': {
     }
   },
-  'Full Colour 3D Printing': {
+  'Colour Jet 3D Printing': {
     'Visijet - PXL': {
       'type': 'Special Application Material',
       'description': 'Full colour CMYK 3D printing technology capable of portraying over 360 thousand different colour combinations. Ideal for architectural models and visual concept models.',
       'datasheet': 'http://www.3dsystems.com/sites/www.3dsystems.com/files/cjp_brochure_0316_usen_web_1.pdf'
     }
   },
-  'Selective Laser Sintering': {
-    'Duraform PA': {
-      'type': 'Special Application Material',
-      'description': 'Durable nylon material with excellent surface resolution and feature detail. Easily machinable and paintable to create demonstration parts.',
-      'datasheet': 'http://www.3dsystems.com/sites/www.3dsystems.com/files/DS_DuraForm_PA_US.pdf'
+  'Metal 3D Printing (Coming 2018)' : {
+    'Stainless Steel 17-4PH (Coming Soon)': {
+
+    },
+    'Kovar (Coming Soon)': {
+
+    },
+    'Copper (Coming Soon)': {
+
+    },
+    'AISI 4140 (Coming Soon)': {
+
     }
   }
 }

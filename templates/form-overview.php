@@ -11,10 +11,11 @@
             </button>
             <div class="m-dropdown technology-dropdown">
                 <ul>                            
-                    <button class="input-tab input-onclick" data-controls="stl_technology_" value="polyjet_stereolithography" data-text="PolyJet & Stereolithography">PolyJet & Stereolithography</button>
+                    <button class="input-tab input-onclick" data-controls="stl_technology_" value="polyjet_matrix" data-text="Polyjet Matrix">Polyjet Matrix</button>
+                    <button class="input-tab input-onclick" data-controls="stl_technology_" value="stereolithography" data-text="Stereolithography">Stereolithography</button>
                     <button class="input-tab input-onclick" data-controls="stl_technology_" value="fused_deposition_modeling" data-text="Fused Deposition Modeling">Fused Deposition Modeling</button>
-                    <button class="input-tab input-onclick" data-controls="stl_technology_" value="full_colour_printing" data-text="Full Colour 3D Printing">Full Colour 3D Printing</button>
                     <button class="input-tab input-onclick" data-controls="stl_technology_" value="selective_laser_sintering" data-text="Selective Laser Sintering">Selective Laser Sintering</button>
+                    <button class="input-tab input-onclick" data-controls="stl_technology_" value="colour_jet_printing" data-text="Colour Jet 3D Printing">Colour Jet 3D Printing</button>
                 </ul>
             </div>
             

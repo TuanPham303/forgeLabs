@@ -17,7 +17,7 @@ jQuery(document).ready(function ($) {
     $('.grid-materials').empty();
     for (let tech in materialsData) {
       const selectedTech = $('.selected-technology').text();
-      if (tech === selectedTech) {
+      if (tech === selectedTech && tech !== 'Metal 3D Printing (Coming 2018)') {
         for (let mat in materialsData[tech]) {
           const matLowercase = mat.toLowerCase().replace(/\s+/g, '').replace(/\/+/g, '');
 
@@ -155,37 +155,56 @@ jQuery(document).ready(function ($) {
       const currentEdittingTab = $(e.target).parentsUntil('.m-tabdata-container')[2].children[6].children[0];
       jQuery(currentEdittingTab).empty();
       switch (techDataText) {
-        case 'PolyJet & Stereolithography':
-          jQuery(currentEdittingTab).append(`
-          <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="verowhite" data-text="VeroWhite">VeroWhite</button>
-          <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="veroclear" data-text="VeroClear">VeroClear</button>
-          <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="tangoblackagilus30" data-text="TangoBlack / Agilus30">TangoBlack / Agilus30</button>
-          <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="digitalabs" data-text="Digital ABS">Digital ABS</button>
-          <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="hightempurature(rgd525)" data-text="High Tempurature (RGD525)">High Temperature (RGD525)</button>
-          <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="simulatedpolypropylene(rigur)" data-text="Simulated Polypropylene (Rigur)">Simulated Polypropylene (Rigur)</button>
-          <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="accura25" data-text="Accura 25">Accura 25</button>
-          `);
-          break;
-        case 'Fused Deposition Modeling':
-          jQuery(currentEdittingTab).append(`
-          <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="absasa" data-text="ABS / ASA">ABS / ASA</button>
-          <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="nylon-12" data-text="Nylon-12">Nylon-12</button>
-          <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="polycarbonate" data-text="Polycarbonate">Polycarbonate</button>
-          <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="ultem9085" data-text="ULTEM 9085">ULTEM 9085</button>
-          `);
-          break;
-        case 'Full Colour 3D Printing':
-          jQuery(currentEdittingTab).append(`
-          <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="visijet-pxl" data-text="Visijet - PXL">Visijet - PXL</button>          
-          `);
-          break;
-        case 'Selective Laser Sintering':
-          jQuery(currentEdittingTab).append(`
-          <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="duraformpa" data-text="Duraform PA">Duraform PA</button>
-          `);
-          break;
-        default:
-          return;
+        case 'Polyjet Matrix':
+        jQuery(currentEdittingTab).append(`
+        <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="verowhite" data-text="VeroWhite">VeroWhite</button>
+        <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="veroclear" data-text="VeroClear">VeroClear</button>
+        <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="tangoblackagilus30" data-text="TangoBlack / Agilus30">TangoBlack / Agilus30</button>
+        <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="digitalabs" data-text="Digital ABS">Digital ABS</button>
+        <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="hightempurature(rgd525)" data-text="High Tempurature (RGD525)">High Temperature (RGD525)</button>
+        <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="simulatedpolypropylene(rigur)" data-text="Simulated Polypropylene (Rigur)">Simulated Polypropylene (Rigur)</button>
+        `);
+        break;
+      case 'Stereolithography':
+        jQuery(currentEdittingTab).append(`
+        <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="accuraxtremewhite" data-text="Accura Xtreme White">Accura Xtreme White</button>
+        <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="accura25" data-text="Accura 25">Accura 25</button>
+        <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="accuraclearvue" data-text="Accura ClearVue">Accura ClearVue</button>
+        `);
+        break;
+      case 'Fused Deposition Modeling':
+        jQuery(currentEdittingTab).append(`
+        <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="absasa" data-text="ABS / ASA">ABS / ASA</button>
+        <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="nylon-12" data-text="Nylon-12">Nylon-12</button>
+        <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="polycarbonate" data-text="Polycarbonate">Polycarbonate</button>
+        <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="ultem9085" data-text="ULTEM 9085">ULTEM 9085</button>
+        <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="pc-abs" data-text="PC-ABS">PC-ABS</button>
+        <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="nylon-12cf" data-text="Nylon-12CF">Nylon-12CF</button>
+        <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="pc-iso" data-text="PC-ISO">PC-ISO</button>
+        <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="ultem1010" data-text="ULTEM 1010">ULTEM 1010</button>
+        `);
+        break;
+      case 'Selective Laser Sintering':
+        jQuery(currentEdittingTab).append(`
+        <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="duraformpa" data-text="Duraform PA">Duraform PA</button>
+        <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="duraformgf" data-text="Duraform GF">Duraform GF</button>            
+        `);
+        break;
+      case 'Colour Jet 3D Printing':
+        jQuery(currentEdittingTab).append(`
+        <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="visijet-pxl" data-text="Visijet - PXL">Visijet - PXL</button>          
+        `);
+        break;
+      // case 'Metal 3D Printing (Coming 2018)':
+      //   jQuery(currentEdittingTab).append(`
+      //   <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="stainlesssteel17-4PH" data-text="Stainless Steel 17-4PH">Stainless Steel 17-4PH</button>
+      //   <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="kovar" data-text="Kovar">Kovar</button>
+      //   <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="copper" data-text="Copper">Copper</button>
+      //   <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="aisi4140" data-text="AISI 4140">AISI 4140</button>          
+      //   `);
+      //   break;
+      default:
+        return;
       }
     }
   });
@@ -197,37 +216,56 @@ function changeDropdownMaterials(tech) {
 
   jQuery(matDropdown).empty();
   switch (tech) {
-    case 'PolyJet & Stereolithography':
-      jQuery(matDropdown).append(`
-      <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="verowhite" data-text="VeroWhite">VeroWhite</button>
-      <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="veroclear" data-text="VeroClear">VeroClear</button>
-      <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="tangoblackagilus30" data-text="TangoBlack / Agilus30">TangoBlack / Agilus30</button>
-      <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="digitalabs" data-text="Digital ABS">Digital ABS</button>
-      <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="hightempurature(rgd525)" data-text="High Tempurature (RGD525)">High Temperature (RGD525)</button>
-      <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="simulatedpolypropylene(rigur)" data-text="Simulated Polypropylene (Rigur)">Simulated Polypropylene (Rigur)</button>
-      <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="accura25" data-text="Accura 25">Accura 25</button>
-      `);
-      break;
-    case 'Fused Deposition Modeling':
-      jQuery(matDropdown).append(`
-      <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="absasa" data-text="ABS / ASA">ABS / ASA</button>
-      <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="nylon-12" data-text="Nylon-12">Nylon-12</button>
-      <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="polycarbonate" data-text="Polycarbonate">Polycarbonate</button>
-      <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="ultem9085" data-text="ULTEM 9085">ULTEM 9085</button>
-      `);
-      break;
-    case 'Full Colour 3D Printing':
-      jQuery(matDropdown).append(`
-      <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="visijet-pxl" data-text="Visijet - PXL">Visijet - PXL</button>          
-      `);
-      break;
-    case 'Selective Laser Sintering':
-      jQuery(matDropdown).append(`
-      <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="duraformpa" data-text="Duraform PA">Duraform PA</button>
-      `);
-      break;
-    default:
-      return;
+    case 'Polyjet Matrix':
+    jQuery(matDropdown).append(`
+    <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="verowhite" data-text="VeroWhite">VeroWhite</button>
+    <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="veroclear" data-text="VeroClear">VeroClear</button>
+    <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="tangoblackagilus30" data-text="TangoBlack / Agilus30">TangoBlack / Agilus30</button>
+    <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="digitalabs" data-text="Digital ABS">Digital ABS</button>
+    <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="hightempurature(rgd525)" data-text="High Tempurature (RGD525)">High Temperature (RGD525)</button>
+    <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="simulatedpolypropylene(rigur)" data-text="Simulated Polypropylene (Rigur)">Simulated Polypropylene (Rigur)</button>
+    `);
+    break;
+  case 'Stereolithography':
+    jQuery(matDropdown).append(`
+    <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="accuraxtremewhite" data-text="Accura Xtreme White">Accura Xtreme White</button>
+    <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="accura25" data-text="Accura 25">Accura 25</button>
+    <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="accuraclearvue" data-text="Accura ClearVue">Accura ClearVue</button>
+    `);
+    break;
+  case 'Fused Deposition Modeling':
+    jQuery(matDropdown).append(`
+    <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="absasa" data-text="ABS / ASA">ABS / ASA</button>
+    <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="nylon-12" data-text="Nylon-12">Nylon-12</button>
+    <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="polycarbonate" data-text="Polycarbonate">Polycarbonate</button>
+    <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="ultem9085" data-text="ULTEM 9085">ULTEM 9085</button>
+    <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="pc-abs" data-text="PC-ABS">PC-ABS</button>
+    <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="nylon-12cf" data-text="Nylon-12CF">Nylon-12CF</button>
+    <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="pc-iso" data-text="PC-ISO">PC-ISO</button>
+    <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="ultem1010" data-text="ULTEM 1010">ULTEM 1010</button>
+    `);
+    break;
+  case 'Selective Laser Sintering':
+    jQuery(matDropdown).append(`
+    <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="duraformpa" data-text="Duraform PA">Duraform PA</button>
+    <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="duraformgf" data-text="Duraform GF">Duraform GF</button>            
+    `);
+    break;
+  case 'Colour Jet 3D Printing':
+    jQuery(matDropdown).append(`
+    <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="visijet-pxl" data-text="Visijet - PXL">Visijet - PXL</button>          
+    `);
+    break;
+  // case 'Metal 3D Printing (Coming 2018)':
+  //   jQuery(matDropdown).append(`
+  //   <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="stainlesssteel17-4PH" data-text="Stainless Steel 17-4PH">Stainless Steel 17-4PH</button>
+  //   <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="kovar" data-text="Kovar">Kovar</button>
+  //   <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="copper" data-text="Copper">Copper</button>
+  //   <button class="input-tab input-onclick" data-controls="stl_material_" type="image" value="aisi4140" data-text="AISI 4140">AISI 4140</button>          
+  //   `);
+  //   break;
+  default:
+    return;
   }
 }
 
@@ -238,9 +276,3 @@ function openAbout() {
 function closeAbout() {
   document.getElementById('about-overlay').style.display = 'none';
 }
-
-// MATERIALS
-// if PolyJet & Stereolithography 
-// if Fused Deposition Modeling
-// if Full Colour 3D Printing
-// if Selective Laser Sintering
